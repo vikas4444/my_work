@@ -1,0 +1,9 @@
+def mergeArrays(a,b,n,m):
+    k = []
+    h = a + b
+    # print(h)
+    [k.append(j) for j in h if j not in k]
+    # print(k)
+    k = sorted(k)
+    # k = list(map(str,k))
+    return " ".join(k)

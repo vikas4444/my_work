@@ -1,0 +1,78 @@
+#1
+def pivot_place(list1,first,last):
+    pivot = list1[first]
+    left = first + 1
+    right = last
+    while True:
+        while left<=right and list1[left] <= pivot:
+            left = left + 1
+        while left<=right and list1[right] >= pivot:
+            right = right -1
+        if right < left:
+            break
+        else:
+            list1[left],list1[right] = list1[right],list1[left]
+    list1[first],list1[right] = list1[right],list1[first]
+    return right
+
+
+def quicksort(list1,first,last):
+    if first < last:
+        p = pivot_place(list1,first,last)
+        quicksort(list1,first,p-1)
+        quicksort(list1,p+1,last)
+    return list1
+    
+    
+m = int(input())
+for i in range(m):
+    n = int(input())
+    k = input().strip().split()
+    k = list(map(int,k))
+    j = int(input())
+    x = quicksort(k,0,len(k)-1)
+    print(x[j-1])
+ 
+#2
+
+def insert(arr):
+
+    for i in range(1,len(arr)):
+
+        curr_ele = arr[i]
+
+        pos = i
+
+        # print("i:"+ str(i) + " curr_ele:" + str(curr_ele) + " pos:" + str(pos) + " arr:" + str(arr))
+
+        while curr_ele < arr[pos -1] and pos > 0:
+
+            arr[pos] = arr[pos-1]
+
+            # print("      arr:" + str(arr))
+
+            pos = pos-1
+
+            # print("      pos:"+ str(pos))
+
+        arr[pos] = curr_ele
+
+        # print("arr:" + str(arr))
+
+    return arr
+
+def k_th(arr,idx):
+    x = insert(arr)
+    print(x)
+    return x[idx-1]
+    
+    
+    
+    
+m = int(input())
+for i in range(m):
+    n = int(input())
+    k = input().strip().split()
+    k = list(map(int,k))
+    j = int(input())
+    print(k_th(k,j))
