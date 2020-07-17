@@ -1,0 +1,16 @@
+
+def winner(arr,n):
+    res = []
+    d = {}
+    for i in arr:
+        if i not in d:
+            d[i] = 1
+        else:
+            d[i] += 1
+    # print(d)
+    x = max([val for val in d.values()])
+    for key, val in d.items():
+      if val == x:
+        res.append(key)
+    y = sorted(res)
+    return [y[0],x]

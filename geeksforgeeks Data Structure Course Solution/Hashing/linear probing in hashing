@@ -1,0 +1,17 @@
+def linearProbing( hashSize, arr, N):
+    hash_table = [-1] * hashSize
+    for i in arr:
+        hash_key = i%hashSize
+        print("key",hash_key)
+        if hash_table[hash_key] == -1:
+            hash_table[hash_key] = i
+        else:
+            for j in range(1,hashSize+1):
+                if hash_table[(hash_key+j)%hashSize] == -1:
+                    hash_table[(hash_key+j)%hashSize] = i
+                    break
+            # if j == hashSize:
+            #     return
+    if len(hash_table)==0:
+        return 
+    return hash_table

@@ -1,0 +1,10 @@
+def countNonRepeated(arr,n):
+    c = 0
+    for i in range(n): 
+        j = 0
+        while(j < n): 
+            if (i != j and arr[i] == arr[j]): 
+                c += 1
+                break
+            j += 1
+    return n - c

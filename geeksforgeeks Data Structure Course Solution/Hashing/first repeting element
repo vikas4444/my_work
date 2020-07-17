@@ -1,0 +1,8 @@
+def firstRepeated(arr, n):
+    for i in range(n): 
+        j = 0
+        while(j < n): 
+            if (i != j and arr[i] == arr[j]):
+                return i+1
+            j += 1
+    return -1

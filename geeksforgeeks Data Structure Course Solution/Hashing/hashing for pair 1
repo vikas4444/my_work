@@ -1,0 +1,10 @@
+def sumExists(arr, N, sum):
+	# Create an empty hash set 
+	s = set() 
+	
+	for i in range(0, N): 
+		temp = sum-arr[i] 
+		if (temp in s):
+		    return 1
+		s.add(arr[i]) 
+	return 0

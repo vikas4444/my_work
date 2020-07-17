@@ -1,0 +1,6 @@
+def NumberofElementsInIntersection(a, b, n, m):
+    ele = []
+    for i in a:
+        if i in b:
+            ele.append(i)
+    return len(list(set(ele)))

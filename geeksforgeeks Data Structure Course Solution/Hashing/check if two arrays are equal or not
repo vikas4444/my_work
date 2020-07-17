@@ -1,0 +1,7 @@
+def check(arr1, arr2, n):
+    for i in arr1:
+        if i in arr2:
+            continue
+        else:
+            return 0
+    return 1

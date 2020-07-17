@@ -1,0 +1,16 @@
+def QuadraticProbing(hash, hashSize, arr, N):
+    # hash = [-1 for i in range(hashSize)]
+    for i in arr:
+        hash_key = i%hashSize
+        if hash[hash_key] == -1:
+            hash[hash_key] = i
+        else:
+            for j in range(1,hashSize+1):
+                hash_key = (i + (j)**2)%hashSize
+                # print(hash_key,i)
+                if hash[hash_key] == -1:
+                    hash[hash_key]= i
+                    break
+                else:
+                    continue
+    return hash

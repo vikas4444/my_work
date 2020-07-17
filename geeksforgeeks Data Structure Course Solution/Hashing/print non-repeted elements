@@ -1,0 +1,14 @@
+def printNonRepeated(arr,n):
+    norep = []
+    rep = []
+    for i in range(n): 
+        j = 0
+        while(j < n): 
+            if (i != j and arr[i] == arr[j]):
+                norep.append(arr[j])
+                break
+            j += 1
+    for i in arr:
+        if i not in norep:
+            rep.append(i)
+    return rep

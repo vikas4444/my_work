@@ -1,0 +1,12 @@
+def findPairs(arr,n):
+    s=set()
+    ret=[]
+    for i in arr:
+        if abs(i) in s:
+            ret.append(-1 * abs(i))
+            ret.append(abs(i))
+        else:
+            s.add(abs(i))
+    return ret
+
+print(findPairs([1, 3, 6, -2, -1, -3, 2, 7,],8))

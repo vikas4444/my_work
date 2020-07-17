@@ -1,0 +1,8 @@
+def separateChaining(hashSize, arr, sizeOfArray):
+    hash_table = [[] for _ in range(hashSize)]
+    for i in arr:
+        hash_key = i%hashSize
+        hash_table[hash_key].append(i)
+    if len(hash_table)==0:
+        return 
+    return hash_table
