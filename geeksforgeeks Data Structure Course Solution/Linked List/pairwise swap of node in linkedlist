@@ -1,0 +1,7 @@
+# swap pairwise nodes of the linked list and return the head
+def pairwiseSwap(head):
+    temp = head
+    while (temp != None and temp.next != None):
+        temp.data,temp.next.data  = temp.next.data,temp.data
+        temp = temp.next.next
+    return head

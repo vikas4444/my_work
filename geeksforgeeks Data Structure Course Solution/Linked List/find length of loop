@@ -1,0 +1,14 @@
+def countNodesinLoop(head):
+    torto = head
+    hare = head
+    while(torto and hare and hare.next):
+        torto = torto.next
+        hare = hare.next.next
+        if torto == hare:
+            c = 1
+            torto = torto.next
+            while torto != hare:
+                torto = torto.next
+                c += 1
+            return c
+    return 0

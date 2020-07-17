@@ -1,0 +1,42 @@
+def reverseList(head):
+    prev_node = None
+    curr_node = head
+    nxt_node = head
+    while (nxt_node != None):
+        nxt_node = nxt_node.next
+        curr_node.next = prev_node
+        prev_node = curr_node
+        curr_node = nxt_node
+    return prev_node
+# def addLists(first, second):
+def addLists(first,second):
+  first = reverseList(first)
+  second = reverseList(second)
+#   return second
+  temp = None
+  prev = None
+  res = None
+  carr = 0
+  while (first != None or second != None):
+    fdata = 0 if first is None else first.data 
+    sdata = 0 if second is None else second.data 
+    # print(str(fdata) + " " + str(sdata) + " " + str(carr))
+    summ = carr + fdata + sdata 
+    carr = 1 if summ >= 10 else 0
+    summ = summ if summ < 10 else summ % 10
+    temp = Node(summ)
+    # if temp 
+    if res == None:
+      res = temp
+      res.next = prev
+    else:
+      prev.next = temp 
+    prev = temp
+    if first != None:
+      first = first.next
+    if second != None:
+      second = second.next
+  if carr > 0:
+    temp.next = Node(carr)
+  res = reverseList(res)
+  return res

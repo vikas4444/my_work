@@ -1,0 +1,23 @@
+def getCount(head_node):
+    c = 0
+    curr = head_node
+    while curr != None:
+        curr = curr.next 
+        c += 1
+    return c
+    
+def getNthfromEnd(head,n):
+    k = getCount(head)
+    h = k - ( n - 1) 
+    c = 1
+    curr = head
+    while curr != None:
+        if n > k:
+            return -1
+        elif c == h:
+            return curr.data
+        curr = curr.next 
+        c += 1
+    # return c
+    # print("k" + str(k))
+    

@@ -1,0 +1,10 @@
+def detectLoop(head):
+    torto = head
+    hare = head
+    while(torto and hare and hare.next):
+        torto = torto.next
+        hare = hare.next.next
+        if torto == hare:
+            return True
+    return False
+        

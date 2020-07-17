@@ -1,0 +1,7 @@
+def deleteNode(curr_node):
+    nxt_node = curr_node.next
+    # nxtofnext = nxt_node.next
+    # print("next data" + str(nxt_node.data) + "curr data" + str(curr_node.data))
+    curr_node.data = nxt_node.data
+    curr_node.next = nxt_node.next
+    # print("data" + str(curr_node.data))

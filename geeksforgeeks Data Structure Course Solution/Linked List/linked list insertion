@@ -1,0 +1,25 @@
+def insertAtBegining(head,x):
+    # code here
+    if head == None:
+        a = Node(x)
+        head = a
+        return head
+    else:
+        a = Node(x)
+        a.next = head
+        return a
+
+def insertAtEnd(head,x):
+    if head == None:
+        a = Node(x)
+        head = a
+        return head
+    else:
+        a = Node(x)
+        lastnode = head
+        while True:
+            if lastnode.next is None:
+                break
+            lastnode = lastnode.next
+        lastnode.next = a
+        return head

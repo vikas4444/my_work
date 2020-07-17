@@ -1,0 +1,30 @@
+def printList(head): 
+    node = head 
+    while node is not None: 
+        print(node.data, end = " ") 
+        node = node.next
+def get(head, index):
+    curr = head
+    c = 0
+    while curr!=None:
+        if c == index:
+            return curr
+        curr = curr.next
+        c += 1
+def addNode(head, p, data):
+    
+    new_node =  Node(data);
+    temp = get(head, p);
+    new_node.next = temp.next;
+    # print("PL")
+    # print(printList(new_node))
+
+    new_node.prev = temp;
+    temp.next = new_node;
+    if(new_node.next!=None):
+        temp = new_node.next;
+        temp.prev = new_node;
+
+
+
+	
