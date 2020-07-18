@@ -1,0 +1,15 @@
+def preorder(root):
+    if root is None: 
+        return 
+    nodeStack = [] 
+    nodeStack.append(root) 
+    while(len(nodeStack) > 0): 
+        node = nodeStack.pop() 
+        print(node.data,end=" ") 
+        if node.right is not None: 
+            nodeStack.append(node.right) 
+        if node.left is not None: 
+            nodeStack.append(node.left)
+    return nodeStack
+    
+    
