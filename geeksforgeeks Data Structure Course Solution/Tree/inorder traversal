@@ -1,0 +1,17 @@
+def InOrder(root):
+	stack = []
+	curr = root
+	res = []
+	while True:
+		if curr != None:
+			stack.append(curr)
+			curr = curr.left
+		elif len(stack) != 0:
+			node = stack.pop()
+			res.append(node.data)
+# 			print(node.data, end=" ")
+			curr = node.right
+			continue
+		else:
+			break
+	return res
