@@ -1,0 +1,38 @@
+def getMaxWidth(root):
+    if (root == None): 
+        return 
+    s1 = []  
+    s2 = []  
+    L = 0
+    R = 0
+    L_list = []
+    R_list = [] 
+    s1.append(root)  
+    while not len(s1) == 0 or not len(s2) == 0: 
+        while not len(s1) == 0: 
+            temp = s1[-1]  
+            s1.pop()  
+            # print(temp.data, end = " ")  
+            R += 1
+            if (temp.right):
+                s2.append(temp.right)
+            if (temp.left): 
+                s2.append(temp.left) 
+        R_list.append(R)
+        # print()
+        R = 0
+  
+        while (not len(s2) == 0): 
+            temp = s2[-1]  
+            s2.pop()  
+            # print(temp.data, end = " ")  
+            L += 1 
+            if (temp.left): 
+                s1.append(temp.left)  
+            if (temp.right):  
+                s1.append(temp.right)
+        L_list.append(L)
+        # print()
+        L = 0
+      
+    return max([max(L_list), max(R_list)])
